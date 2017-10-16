@@ -12,7 +12,7 @@ func newServer() *echo.Echo {
 	return e
 }
 
-func checkRouters(routers []echo.Route, t *testing.T) {
+func checkRouters(routers []*echo.Route, t *testing.T) {
 	expectedRouters := map[string]string{
 		"/debug/pprof/":             "IndexHandler",
 		"/debug/pprof/heap":         "HeapHandler",
@@ -34,8 +34,8 @@ func checkRouters(routers []echo.Route, t *testing.T) {
 		if !ok {
 			t.Errorf("missing router %s", router.Path)
 		}
-		if !strings.Contains(router.Handler, name) {
-			t.Errorf("handler for %s should contain %s, got %s", router.Path, name, router.Handler)
+		if !strings.Contains(router.Name, name) {
+			t.Errorf("handler for %s should contain %s, got %s", router.Path, name, router.Name)
 		}
 	}
 }

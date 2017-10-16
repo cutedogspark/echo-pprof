@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/cage1016/echo-pprof"
 	"github.com/labstack/echo"
-	"github.com/sevenNt/echo-pprof"
 )
 
 func main() {
