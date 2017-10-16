@@ -1,0 +1,5 @@
+package: github.com/cutedogspark/echo-pprof/example
+import:
+- package: github.com/cutedogspark/echo-pprof
+- package: github.com/labstack/echo
+  version: ^3.2.3

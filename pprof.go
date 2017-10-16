@@ -48,7 +48,7 @@ func WrapGroup(prefix string, g *echo.Group) {
 // IndexHandler will pass the call from /debug/pprof to pprof
 func IndexHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Index(ctx.Response().Writer(), ctx.Request())
+		pprof.Index(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -64,7 +64,7 @@ func HeapHandler() echo.HandlerFunc {
 // GoroutineHandler will pass the call from /debug/pprof/goroutine to pprof
 func GoroutineHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Handler("goroutine").ServeHTTP(ctx.Response().Writer(), ctx.Request())
+		pprof.Handler("goroutine").ServeHTTP(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -72,7 +72,7 @@ func GoroutineHandler() echo.HandlerFunc {
 // BlockHandler will pass the call from /debug/pprof/block to pprof
 func BlockHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Handler("block").ServeHTTP(ctx.Response().Writer(), ctx.Request())
+		pprof.Handler("block").ServeHTTP(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -80,7 +80,7 @@ func BlockHandler() echo.HandlerFunc {
 // ThreadCreateHandler will pass the call from /debug/pprof/threadcreate to pprof
 func ThreadCreateHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Handler("threadcreate").ServeHTTP(ctx.Response().Writer(), ctx.Request())
+		pprof.Handler("threadcreate").ServeHTTP(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -88,7 +88,7 @@ func ThreadCreateHandler() echo.HandlerFunc {
 // CmdlineHandler will pass the call from /debug/pprof/cmdline to pprof
 func CmdlineHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Cmdline(ctx.Response().Writer(), ctx.Request())
+		pprof.Cmdline(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -96,7 +96,7 @@ func CmdlineHandler() echo.HandlerFunc {
 // ProfileHandler will pass the call from /debug/pprof/profile to pprof
 func ProfileHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Profile(ctx.Response().Writer(), ctx.Request())
+		pprof.Profile(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -104,7 +104,7 @@ func ProfileHandler() echo.HandlerFunc {
 // SymbolHandler will pass the call from /debug/pprof/symbol to pprof
 func SymbolHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Symbol(ctx.Response().Writer(), ctx.Request())
+		pprof.Symbol(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -112,7 +112,7 @@ func SymbolHandler() echo.HandlerFunc {
 // TraceHandler will pass the call from /debug/pprof/trace to pprof
 func TraceHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Trace(ctx.Response().Writer(), ctx.Request())
+		pprof.Trace(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }
@@ -120,7 +120,7 @@ func TraceHandler() echo.HandlerFunc {
 // MutexHandler will pass the call from /debug/pprof/mutex to pprof
 func MutexHandler() echo.HandlerFunc {
 	return func(ctx echo.Context) error {
-		pprof.Handler("mutex").ServeHTTP(ctx.Response().Writer(), ctx.Request())
+		pprof.Handler("mutex").ServeHTTP(ctx.Response().Writer, ctx.Request())
 		return nil
 	}
 }

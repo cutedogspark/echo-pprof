@@ -3,6 +3,10 @@ echo-pprof
 
 A wrapper for [golang web framework echo](https://github.com/labstack/echo) to use `net/http/pprof` easily.
 
+## Echo Version Support
+
+- [x] echo ^3.2.3
+
 ## Install
 
 First install echo-pprof to your GOPATH using `go get`:
